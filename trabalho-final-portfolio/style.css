@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+:root {
+  --roxo-escuro: #1b1033;
+  --roxo-profundo: #120a24;
+  --rosa: #ff5ca8;
+  --turquesa: #6de6e8;
+  --branco: #fff8fc;
+  --texto: #291a36;
+}
+
+body {
+  background: linear-gradient(135deg, var(--roxo-escuro), #33204f);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Menu e Rodapé */
+.cabecalho, .rodape {
+  background-color: var(--roxo-profundo);
+  color: var(--branco);
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid var(--rosa);
+}
+
+.rodape {
+  border-top: 2px solid var(--turquesa);
+  border-bottom: none;
+}
+
+.menu a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--turquesa);
+}
+
+/* Área Central Responsiva */
+.conteudo-principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cartao-perfil, .lista-projetos, .cartao-contato {
+  background: var(--branco);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(9, 3, 20, 0.35);
+  animation: aparecer 0.6s ease;
+}
+
+.cartao-perfil {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 850px;
+  text-align: left;
+}
+
+.detalhes-perfil {
+  flex: 1;
+}
+
+.foto-perfil {
+  width: 240px;
+  height: 240px;
+  flex: 0 0 240px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 0;
+  border: 3px solid var(--rosa);
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Botões */
+.botao {
+  display: inline-block;
+  background-color: var(--roxo-escuro);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.botao:hover {
+  background-color: var(--rosa);
+  color: var(--roxo-profundo);
+  transform: scale(1.05);
+}
+
+.item-projeto {
+  border-top: 1px solid var(--turquesa);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+/* Responsividade */
+@media (max-width: 600px) {
+  .cartao-perfil {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foto-perfil {
+    width: 200px;
+    height: 200px;
+    flex-basis: 200px;
+  }
+}
+
+/* Animação*/
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
